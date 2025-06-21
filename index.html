@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetRMM Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <!-- Main Sidebar -->
+        <aside class="main-sidebar">
+            <button class="hamburger-btn">
+                <i class='bx bx-menu'></i>
+            </button>
+            <ul class="sidebar-nav">
+                <li class="active">
+                    <a href="#"><i class='bx bxs-dashboard'></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bx-error-alt'></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bx-desktop'></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bx-git-compare'></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bx-file-blank'></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bxs-box'></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bx-repeat'></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bxs-report'></i></a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bx-cog'></i></a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Nested Sidebar -->
+        <aside class="nested-sidebar">
+            <div class="sidebar-header">
+                <div class="logo">NetRMM</div>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="active">
+                    <a href="#"><i class='bx bxs-dashboard'></i>Dashboard</a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bx-error-alt'></i>Alerts & Incidents</a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bx-desktop'></i>Devices & Endpoints</a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bx-git-compare'></i>Network Monitoring</a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bx-file-blank'></i>Patch Management</a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bxs-box'></i>Software Inventory</a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bx-repeat'></i>Remote Access</a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bxs-report'></i>Reports & Analytics</a>
+                </li>
+                <li>
+                    <a href="#"><i class='bx bx-cog'></i>Settings</a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <span>NetRMM v1.0</span>
+            </div>
+        </aside>
+
+        <!-- Main Header -->
+        <header class="main-header">
+            <nav class="main-nav">
+                <a href="#" class="nav-link active" data-tab="rmm-dashboard">RMM Dashboard</a>
+                <a href="#" class="nav-link" data-tab="device-view">Device View</a>
+                <a href="#" class="nav-link" data-tab="alerts-view">Alerts View</a>
+            </nav>
+            <div class="header-actions">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <i class='bx bx-search search-icon'></i>
+                </div>
+                <i class='bx bx-bell'></i>
+                <div class="user-profile">
+                    <div class="profile-trigger">
+                        <img src="https://i.pravatar.cc/32?u=pravin" alt="Pravin Singh">
+                        <span>Pravin Singh</span>
+                        <i class='bx bx-chevron-down'></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-header">
+                            <img src="https://i.pravatar.cc/64?u=pravin" alt="Pravin Singh">
+                            <div class="user-info">
+                                <h4>Pravin Singh</h4>
+                                <p>Administrator</p>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class='bx bx-user'></i>
+                            <span>My Profile</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class='bx bx-cog'></i>
+                            <span>Account Settings</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class='bx bx-bell'></i>
+                            <span>Notifications</span>
+                            <span class="badge">3</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class='bx bx-help-circle'></i>
+                            <span>Help Center</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <i class='bx bx-message-square-detail'></i>
+                            <span>Feedback</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item text-danger">
+                            <i class='bx bx-log-out'></i>
+                            <span>Sign Out</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- RMM Dashboard Tab -->
+            <div class="tab-content active" id="rmm-dashboard">
+                <div class="dashboard-grid">
+                    <!-- System Health -->
+                    <div class="card system-health">
+                        <h3 class="card-title">SYSTEM HEALTH-OVERVIEW</h3>
+                        <div class="health-body">
+                            <div class="chart-container">
+                                <canvas id="systemHealthDonutChart"></canvas>
+                                <div class="chart-center-text">
+                                    <span>94%</span>
+                                    <p>Devices online</p>
+                                </div>
+                            </div>
+                            <div class="line-chart-container">
+                                <div class="chart-header">
+                                    <div>
+                                        <p>Devices Online <strong>6%</strong></p>
+                                        <p class="offline">Offline</p>
+                                    </div>
+                                    <span class="days-label">Last 7 8 days</span>
+                                </div>
+                                <div class="line-chart">
+                                    <canvas id="systemHealthLineChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alerts Summary -->
+                    <div class="card alerts-summary">
+                        <h3 class="card-title">ALERTS SUMMARY</h3>
+                        <div class="chart-container">
+                            <canvas id="alertsSummaryDonutChart"></canvas>
+                            <div class="chart-center-text">
+                                <span>78</span>
+                                <p>Last day</p>
+                            </div>
+                        </div>
+                        <div class="stats">
+                            <p>Devices up+date</p>
+                            <div class="stat-values">
+                                <span>234</span>
+                                <span>24</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Patch Compliance -->
+                    <div class="card patch-compliance">
+                        <h3 class="card-title">PATCH COMPLIANCE</h3>
+                        <div class="percentage">78%</div>
+                        <div class="line-chart">
+                            <canvas id="patchComplianceLineChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="card recent-activity">
+                        <h3 class="card-title">Recent Activity</h3>
+                        <ul class="activity-list">
+                            <li>
+                                <img src="https://i.pravatar.cc/32?u=reshin" alt="user">
+                                <div>
+                                    <p>Device rebe+rted</p>
+                                    <span>Reshinan:DOI</span>
+                                </div>
+                                <i class='bx bx-check-circle'></i>
+                            </li>
+                            <li>
+                                <img src="https://i.pravatar.cc/32?u=onvi" alt="user">
+                                <div>
+                                    <p>User installed application</p>
+                                    <span>onvi:infle9</span>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="https://i.pravatar.cc/32?u=vganit" alt="user">
+                                <div>
+                                    <p>Agent updated</p>
+                                    <span>vganit v.2.13</span>
+                                </div>
+                                <i class='bx bxs-bell-ring'></i>
+                            </li>
+                        </ul>
+
+                        <!-- Software Deployment Status -->
+                        <div class="deployment-status">
+                            <h3 class="card-title">SOFTWARE DEPLOYMENT STATUS</h3>
+                            <div class="status-item">
+                                <div class="status-header">
+                                    <span>Scheduled Installs</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="status-item">
+                                <div class="status-header">
+                                    <span>Failures</span>
+                                    <span>2%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 2%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Remote Onessinge -->
+                    <div class="card remote-onesinge">
+                        <h3 class="card-title">REMOTE: ONESSINGE</h3>
+                        <div class="line-chart small">
+                            <canvas id="remoteOnessingeLineChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- License & Warranty Tracker -->
+                    <div class="card license-warranty">
+                        <h3>License & Warranty Tracker</h3>
+                        <div class="warranty-item">
+                            <div class="warranty-header">
+                                <span>Software Licenses</span>
+                                <div class="value">
+                                    <span>85</span>
+                                    <span>/ 100</span>
+                                </div>
+                            </div>
+                            <div class="warranty-progress">
+                                <div class="fill green" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="warranty-item">
+                            <div class="warranty-header">
+                                <span>Hardware Warranty</span>
+                                <div class="value">
+                                    <span>45</span>
+                                    <span>/ 75</span>
+                                </div>
+                            </div>
+                            <div class="warranty-progress">
+                                <div class="fill blue" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                        <div class="warranty-item">
+                            <div class="warranty-header">
+                                <span>Cloud Services</span>
+                                <div class="value">
+                                    <span>28</span>
+                                    <span>/ 30</span>
+                                </div>
+                            </div>
+                            <div class="warranty-progress">
+                                <div class="fill green" style="width: 93%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Metrics -->
+                    <div class="card performance-metrics">
+                        <h3 class="card-title">Device Performance Metrics</h3>
+                        <div class="metric">
+                            <div class="metric-info">
+                                <p>CPU Load (avg) <strong>18%</strong></p>
+                                <p>RAM Usage <strong>65%</strong></p>
+                            </div>
+                            <div class="metric-chart">
+                                <div class="line-chart small">
+                                    <canvas id="cpuLoadChart"></canvas>
+                                </div>
+                                <div class="line-chart small">
+                                    <canvas id="ramUsageChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Remote Sessions -->
+                    <div class="card remote-sessions">
+                        <h3 class="card-title">Remote Sessions</h3>
+                        <ul>
+                            <li><span class="dot active"></span>fit. Acimin <span>SERVrco1</span></li>
+                            <li>SERVERD1 <span>1.4 mm</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Threat Detection -->
+                    <div class="card threat-detection">
+                        <h3 class="card-title">Threat Detection & Antivirus Status</h3>
+                        <ul>
+                            <li><i class='bx bx-check-circle'></i> Threats <span>Antifup date</span></li>
+                            <li><i class='bx bx-check-circle'></i> Antivus.date <span>Last scran 3 fhoroge</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Device View Tab -->
+            <div class="tab-content" id="device-view">
+                <div class="devices-header">
+                    <div class="header-left">
+                        <h2>Devices Overview</h2>
+                        <div class="device-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">245</span>
+                                <span class="stat-label">Total Devices</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value text-success">231</span>
+                                <span class="stat-label">Online</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value text-danger">14</span>
+                                <span class="stat-label">Offline</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-right">
+                        <button class="btn btn-primary">
+                            <i class='bx bx-plus'></i>
+                            Add Device
+                        </button>
+                        <button class="btn btn-outline">
+                            <i class='bx bx-filter-alt'></i>
+                            Filters
+                        </button>
+                    </div>
+                </div>
+
+                <div class="devices-grid">
+                    <!-- Device Card 1 -->
+                    <div class="device-card">
+                        <div class="device-header">
+                            <div class="device-status online"></div>
+                            <h3>DESKTOP-01A</h3>
+                            <button class="btn-icon">
+                                <i class='bx bx-dots-vertical-rounded'></i>
+                            </button>
+                        </div>
+                        <div class="device-info">
+                            <div class="info-item">
+                                <i class='bx bx-chip'></i>
+                                <span>Intel i7-12700K</span>
+                            </div>
+                            <div class="info-item">
+                                <i class='bx bx-memory-card'></i>
+                                <span>32GB RAM</span>
+                            </div>
+                            <div class="info-item">
+                                <i class='bx bx-hdd'></i>
+                                <span>1TB SSD</span>
+                            </div>
+                        </div>
+                        <div class="device-metrics">
+                            <div class="metric">
+                                <span class="label">CPU</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 45%"></div>
+                                </div>
+                                <span class="value">45%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="label">RAM</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 60%"></div>
+                                </div>
+                                <span class="value">60%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Device Card 2 -->
+                    <div class="device-card">
+                        <div class="device-header">
+                            <div class="device-status offline"></div>
+                            <h3>LAPTOP-02B</h3>
+                            <button class="btn-icon">
+                                <i class='bx bx-dots-vertical-rounded'></i>
+                            </button>
+                        </div>
+                        <div class="device-info">
+                            <div class="info-item">
+                                <i class='bx bx-chip'></i>
+                                <span>AMD Ryzen 9</span>
+                            </div>
+                            <div class="info-item">
+                                <i class='bx bx-memory-card'></i>
+                                <span>16GB RAM</span>
+                            </div>
+                            <div class="info-item">
+                                <i class='bx bx-hdd'></i>
+                                <span>512GB SSD</span>
+                            </div>
+                        </div>
+                        <div class="device-metrics">
+                            <div class="metric">
+                                <span class="label">CPU</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 0%"></div>
+                                </div>
+                                <span class="value">0%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="label">RAM</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 0%"></div>
+                                </div>
+                                <span class="value">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alerts View Tab -->
+            <div class="tab-content" id="alerts-view">
+                <div class="alerts-header">
+                    <div class="header-left">
+                        <h2>System Alerts</h2>
+                        <div class="alert-stats">
+                            <div class="stat-item">
+                                <span class="stat-value text-danger">12</span>
+                                <span class="stat-label">Critical</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value text-warning">28</span>
+                                <span class="stat-label">Warning</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value text-info">45</span>
+                                <span class="stat-label">Info</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-right">
+                        <button class="btn btn-outline">
+                            <i class='bx bx-filter-alt'></i>
+                            Filter Alerts
+                        </button>
+                        <button class="btn btn-outline">
+                            <i class='bx bx-export'></i>
+                            Export
+                        </button>
+                    </div>
+                </div>
+
+                <div class="alerts-list">
+                    <!-- Critical Alert -->
+                    <div class="alert-item critical">
+                        <div class="alert-icon">
+                            <i class='bx bx-error'></i>
+                        </div>
+                        <div class="alert-content">
+                            <div class="alert-header">
+                                <h4>High CPU Usage</h4>
+                                <span class="timestamp">2 minutes ago</span>
+                            </div>
+                            <p>DESKTOP-01A is experiencing sustained high CPU usage (95%) for the last 15 minutes.</p>
+                            <div class="alert-footer">
+                                <span class="device">DESKTOP-01A</span>
+                                <button class="btn btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Warning Alert -->
+                    <div class="alert-item warning">
+                        <div class="alert-icon">
+                            <i class='bx bx-error'></i>
+                        </div>
+                        <div class="alert-content">
+                            <div class="alert-header">
+                                <h4>Memory Usage Warning</h4>
+                                <span class="timestamp">15 minutes ago</span>
+                            </div>
+                            <p>LAPTOP-02B memory usage has exceeded 80% threshold (Currently at 85%).</p>
+                            <div class="alert-footer">
+                                <span class="device">LAPTOP-02B</span>
+                                <button class="btn btn-sm">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Info Alert -->
+                    <div class="alert-item info">
+                        <div class="alert-icon">
+                            <i class='bx bx-info-circle'></i>
+                        </div>
+                        <div class="alert-content">
+                            <div class="alert-header">
+                                <h4>System Update Available</h4>
+                                <span class="timestamp">1 hour ago</span>
+                            </div>
+                            <p>New security updates are available for 3 devices in your network.</p>
+                            <div class="alert-footer">
+                                <span class="device">Multiple Devices</span>
+                                <button class="btn btn-sm">View Updates</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
